@@ -14,11 +14,11 @@ class MaxMinArray{
             System.out.print(a[i] + " " );
         }
         System.out.println();
-        Pair p=maxMinArray(a,0,a.length-1);
+        Pair p=maxMinArray(a,a.length);
         System.out.print(p.min + " " + p.max );
         
 
-    }
+    }/*
     public static Pair maxMinArray(int a[],int start,int end ){
 
         Pair rh=new Pair();
@@ -55,11 +55,8 @@ class MaxMinArray{
             return p;
         }
 
-
-
-
     }
-
+*/
 
     /*
     public static Pair maxMinArray(int a[],int size){
@@ -91,5 +88,46 @@ class MaxMinArray{
         return pair;       
                 
     }*/
+
+    public static Pair maxMinArray(int a[] ,int size){
+        Pair minMax=new Pair();
+        int i;
+        if(size%2==0){
+            if(a[0]<a[1]){
+                minMax.min=a[0];
+                minMax.max=a[1];
+            }else{
+                minMax.min=a[1];
+                minMax.max=a[0];
+            }
+            i=2;
+        }else{
+            minMax.min= minMax.max=a[0];
+            i=1;
+        }
+
+        while (i<size-1){
+            if(a[i]>a[i+1]){
+                if(a[i]> minMax.max){
+                    minMax.max=a[i];
+                }
+                if(a[i+1]< minMax.min){
+                 minMax.min=a[i+1];
+                }
+            }else{
+                if(a[i]< minMax.min){
+                    minMax.min=a[i];
+                }if(a[i+1]> minMax.max){
+                    minMax.max=a[i+1];
+                }
+            }
+            i+=2;
+        }
+
+        return minMax;
+
+    }
+
+
     
 }
