@@ -1,3 +1,5 @@
+import jdk.internal.util.xml.impl.Pair;
+
 //Maximum and minimum of an array using minimum number of comparisons
 class MaxMinArray{
 
@@ -7,16 +9,59 @@ class MaxMinArray{
 
     public static void main(String args[]){
         int a[]={1,2,3,4,5,6};
-        int size=a.length;
-        for(int i=0;i<size;i++){
+
+        for(int i=0;i<a.length;i++){
             System.out.print(a[i] + " " );
         }
         System.out.println();
-        Pair p=maxMinArray(a,size);
+        Pair p=maxMinArray(a,0,a.length-1);
         System.out.print(p.min + " " + p.max );
         
 
     }
+    public static Pair maxMinArray(int a[],int start,int end ){
+
+        Pair rh=new Pair();
+        Pair lh=new Pair();
+        Pair p=new Pair();
+
+
+        if(start==end){
+            p.min=p.max=a[start];
+            return p;
+        }else if(start+1==end){
+            if(a[start]<a[end]){
+                p.min=a[start];
+                p.max=a[end];
+            }else{
+                p.min=a[end];
+                p.max=a[start];
+            }
+            return p;
+        }else{
+            int mid=(start+end)/2;
+            lh=maxMinArray(a,start,mid);
+            rh=maxMinArray(a,mid+1,end);
+            if(lh.max>rh.max){
+                p.max=lh.max;
+            }else{
+                p.max=rh.max;
+            }
+            if(rh.min<lh.min){
+                p.min=rh.min;
+            }else{
+                p.min=lh.min;
+            }
+            return p;
+        }
+
+
+
+
+    }
+
+
+    /*
     public static Pair maxMinArray(int a[],int size){
         
         //System.out.println(a.length);
@@ -45,6 +90,6 @@ class MaxMinArray{
         }
         return pair;       
                 
-    }
+    }*/
     
 }
