@@ -4,14 +4,14 @@
  */
 public class CycleRotationArray {
     public static void main(String[] args) {
-        int a[]={};
+        int a[]={2,3,4,5,4};
 
         if(a.length==0){
             System.out.print(a.length);
         }else if (a.length==1){
             System.out.print(a.length);
         }else{
-            arrayRotation(a,a.length);
+            arrayRotation2(a,a.length);
         }
 
 
@@ -30,5 +30,25 @@ public class CycleRotationArray {
             System.out.print(a[i]);
         }
     }
+
+
+    private static void arrayRotation2(int[] a, int length) {
+
+        int i=0,j=length-1;
+
+        for (i=0;i<length-1;i++){
+
+            a[i]^=a[j];
+            a[j]^=a[i];
+            a[i]^=a[j];
+
+        }
+
+        for ( i=0;i<length;i++){
+            System.out.print(a[i]);
+        }
+    }
+
+
 
 }

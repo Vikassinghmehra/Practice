@@ -3,13 +3,13 @@
 public class MoveNegToLeftAndPosToRight {
 
     public static void main(String args[]){
-        int a[]={1,2,3,-4,-5,-6,-7};
+        int a[]={1,2,3,-4,-5,6,-7};
         int size=a.length;
         for(int i=0;i<size;i++){
             System.out.print(a[i] + " " );
         }
-        //move(a,size-1);
-        twoPointerApproach(a,0,size-1);
+        move(a,size);
+        //twoPointerApproach(a,0,size-1);
         System.out.print("\n");
         for(int i=0;i<size;i++){
             System.out.print(a[i] + " " );
@@ -33,6 +33,8 @@ public class MoveNegToLeftAndPosToRight {
                 }
             }
     }
+
+
 
     public static void twoPointerApproach(int a[] ,int left ,int right){
 
