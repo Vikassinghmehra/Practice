@@ -4,7 +4,7 @@
  */
 public class CycleRotationArray {
     public static void main(String[] args) {
-        int a[]={2,3,4,5,4};
+        int a[]={1,2,3,4,5,4};
 
         if(a.length==0){
             System.out.print(a.length);
