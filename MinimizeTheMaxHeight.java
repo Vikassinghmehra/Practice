@@ -14,7 +14,7 @@ public class MinimizeTheMaxHeight {
 
     public static void main(String[] args) {
 
-        int arr[]={1,5,4,77,14,7,3};
+        int arr[]={3, 9, 12, 16, 20};
         int k=3;
         int min=minimize(arr,arr.length,k);
         System.out.println(" min"+ min);
@@ -27,7 +27,7 @@ public class MinimizeTheMaxHeight {
         int maxDiff=arr[length-1]-arr[0];
         int smallest=arr[0]+k;
         int large=arr[length-1]-k;
-        for (int i=0;i<length;i++){
+        for (int i=0;i<length-1;i++){
 
             int min =Math.min(smallest,arr[i+1]-k);
             int max=Math.max(large,arr[i]+k);
