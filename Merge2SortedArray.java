@@ -6,7 +6,7 @@ import java.util.Arrays;
  */
 public class Merge2SortedArray {
     public static void main(String[] args) {
-        int a[]={1,2,3,4,5};
+        int a[]={1,3,4,5};
         int b[]={3,5,8,10};
 
         sort(a,b,a.length,b.length);
