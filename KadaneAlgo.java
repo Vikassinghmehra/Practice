@@ -39,5 +39,15 @@ public class KadaneAlgo {
 
     }
 
-
+    public int maxSubArray(int[] nums) {
+        if(nums.length==1){
+            return nums[0];
+        }
+        int best = nums[0], sum = nums[0];
+        for (int k = 1; k < nums.length; k++) {
+            sum = Math.max(nums[k],sum+nums[k]);
+            best = Math.max(best,sum);
+        }
+        return best;
+    }
 }
