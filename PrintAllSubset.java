@@ -15,6 +15,7 @@ public class PrintAllSubset {
         List<List<Integer>> numbersList = new ArrayList<>();
         List<Integer> list = new ArrayList<>();
         listSubset(0, nums, list, numbersList);
+        System.out.println(numbersList);
         return numbersList;
     }
 
