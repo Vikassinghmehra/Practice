@@ -40,5 +40,4 @@ public class Sieve_of_Eratosthenes {
         return ans;
     }
 
-
 }
